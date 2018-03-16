@@ -2,22 +2,22 @@
 ############################# CONSTANTS ########################################
 ################################################################################
 
-# NET_STRUCTURE: vector with one element per network layer from input to output, 
-# must contain integers. Each number defines the size of the layer, can be list 
+# NET_STRUCTURE: vector with one element per network layer from input to output,
+# must contain integers. Each number defines the size of the layer, can be list
 # of array, minimum length 2.
-NET_STRUCTURE = [1, 1]
+NET_STRUCTURE = [2, 2]
 
-# INCL_BIASES: boolean, determines if the networks have bias terms 
+# INCL_BIASES: boolean, determines if the networks have bias terms
 INCL_BIASES = True
 
 # ACT_FUN_HIDDEN: activation function for hidden layers
 ACT_FUN_HIDDEN = 'tanh'
 
 # ACT_FUN_OUTPUT: activation function for output layer
-ACT_FUN_OUTPUT = 'identity'
+ACT_FUN_OUTPUT = 'step'
 
-# DISTANCE_METRIC: function used to calculate distance between phenotype and 
-# target 
+# DISTANCE_METRIC: function used to calculate distance between phenotype and
+# target
 DISTANCE_METRIC= 'euclidean'
 
 # SEL_STRENGTH: selection strength. The lower the value, the higher the strength of selection is.
@@ -66,3 +66,6 @@ ELITIST_PROPORTION = 0.1
 
 #LAMBDA: Average number of mutations per individual
 LAMBDA = 0.2
+
+# FORWARD_CYCLES: Number of cycles of RNN development
+FORWARD_CYCLES = 20
