@@ -96,7 +96,6 @@ class Network(object):
             for i in range(self.numLayers - 2):
                 outputValues = outputValues.dot(self.weights[i]) + (self.bias[i] if self.inclBiases == True else 0)
                 outputValues = self.actFunHidden(outputValues)
-                print(outputValues)
         # calculate the active of the output layer
         outputValues = outputValues.dot(self.weights[-1]) + (self.bias[-1] if self.inclBiases == True else 0)
         outputValues = self.actFunOutput(outputValues)

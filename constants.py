@@ -4,8 +4,8 @@
 
 # NET_STRUCTURE: vector with one element per network layer from input to output,
 # must contain integers. Each number defines the size of the layer, can be list
-# of array, minimum length 2.
-NET_STRUCTURE = [2, 2]
+# or array, minimum length 2.
+NET_STRUCTURE = [2, 2, 2]
 
 # INCL_BIASES: boolean, determines if the networks have bias terms
 INCL_BIASES = True
