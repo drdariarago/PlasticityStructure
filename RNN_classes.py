@@ -66,6 +66,12 @@ class Network(object):
         self.weights = [None] * (self.numLayers - 1)
         for i in range(self.numLayers - 1):
             self.weights[i] = zeros(shape = (structure[i], structure[i+1]))
+        # Create random weights for testing
+        for i in range(self.numLayers - 1):
+            self.weights[i] = random.uniform(
+                    high=2, low=-2,
+                    size= (structure[i], structure[i+1]))
+
         
         # store activation functions
         self.actFunHidden = actFunHidden
@@ -87,10 +93,10 @@ class Network(object):
         outputValues = inputValues
         # calculate the activity of the hidden layers 
         for j in range(self.forwardCycles):
-            print(j, outputValues)
             for i in range(self.numLayers - 2):
                 outputValues = outputValues.dot(self.weights[i]) + (self.bias[i] if self.inclBiases == True else 0)
                 outputValues = self.actFunHidden(outputValues)
+                print(outputValues)
         # calculate the active of the output layer
         outputValues = outputValues.dot(self.weights[-1]) + (self.bias[-1] if self.inclBiases == True else 0)
         outputValues = self.actFunOutput(outputValues)
