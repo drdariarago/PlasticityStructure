@@ -22,10 +22,8 @@ def logistic(x):
 
 def stepFunction(x):
     # step function for binary output from continuous inputValue
-    if x<.5:
-        return 0 
-    else:
-        return 1
+    # returns zero when input equals zero, must fix to true vectorized binary output
+    return sign(x)
 
 def calc_mut_rate(netSize, indMutRate):
     # returns the rate of mutation per link given network size and the mutation
