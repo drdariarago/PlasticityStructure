@@ -86,10 +86,11 @@ class Network(object):
         
         outputValues = inputValues
         # calculate the activity of the hidden layers 
-        for i in range(self.forwardCycles):
-                    for i in range(self.numLayers - 2):
-                        outputValues = outputValues.dot(self.weights[i]) + (self.bias[i] if self.inclBiases == True else 0)
-                        outputValues = self.actFunHidden(outputValues)
+        for j in range(self.forwardCycles):
+            print(j, outputValues)
+            for i in range(self.numLayers - 2):
+                outputValues = outputValues.dot(self.weights[i]) + (self.bias[i] if self.inclBiases == True else 0)
+                outputValues = self.actFunHidden(outputValues)
         # calculate the active of the output layer
         outputValues = outputValues.dot(self.weights[-1]) + (self.bias[-1] if self.inclBiases == True else 0)
         outputValues = self.actFunOutput(outputValues)
